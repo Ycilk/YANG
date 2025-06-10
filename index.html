@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440">
+  <title>Mr.Yang</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #FFFFFF;
+      font-family: 'Roboto', sans-serif;
+      color: #1F2937;
+    }
+    nav {
+      width: 100%;
+      height: 64px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.001) 0%, rgba(147,112,219,0.9) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      box-sizing: border-box;
+      backdrop-filter: blur(4px);
+    }
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+      color: #fff;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .carousel {
+      width: 100%;
+      height: 600px;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      background: #F9FAFB;
+    }
+    .carousel img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+    .carousel-dots {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.5;
+      border: none;
+      cursor: pointer;
+    }
+    .carousel-dot.active {
+      opacity: 1;
+      background: #9370DB;
+    }
+    .section {
+      max-width: 1376px;
+      margin: 64px auto 0 auto;
+      padding: 0 32px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #1F2937;
+      margin-bottom: 64px;
+    }
+    .works {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+    .work-item {
+      width: 320px;
+      height: 320px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .work-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .contact-section {
+      background: #F9FAFB;
+      padding: 64px 0;
+      margin-top: 64px;
+    }
+    .contact-container {
+      max-width: 1152px;
+      margin: 0 auto;
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .contact-info, .contact-form {
+      flex: 1 1 552px;
+      min-width: 320px;
+    }
+    .contact-info h3, .contact-form h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 24px;
+    }
+    .contact-info p, .contact-info a {
+      font-size: 16px;
+      color: #000;
+      margin: 8px 0;
+      text-decoration: none;
+    }
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: #9370DB;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .contact-form label {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px dashed #E5E7EB;
+      border-radius: 12px;
+      font-size: 16px;
+      font-family: 'Roboto', sans-serif;
+      resize: none;
+      background: #fff;
+      color: #000;
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 12px 0;
+      background: #9370DB;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    @media (max-width: 1200px) {
+      .contact-container {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Mr.Yang</div>
+    <div class="nav-links">
+      <a href="#">首页</a>
+      <a href="#works">作品</a>
+      <a href="#contact">联系方式</a>
+    </div>
+  </nav>
+  <div class="carousel">
+    <img src="https://image-resource.mastergo.com/161464800972240/161464800972243/0c09e600fcb025f4404ecd005f027bbc.jpg" alt="banner1">
+    <img src="https://image-resource.mastergo.com/161464800972240/161464800972243/986d019e539339274935678b99f58813.jpg" alt="banner2" style="display:none;">
+    <img src="https://image-resource.mastergo.com/161464800972240/161464800972243/2fae28b3a95d721c04554cbed768a234.jpg" alt="banner3" style="display:none;">
+    <img src="https://image-resource.mastergo.com/161464800972240/161464800972243/ddb226802b0ab533c0610d50bba2235b.jpg" alt="banner4" style="display:none;">
+    <div class="carousel-dots">
+      <button class="carousel-dot active"></button>
+      <button class="carousel-dot"></button>
+      <button class="carousel-dot"></button>
+      <button class="carousel-dot"></button>
+    </div>
+  </div>
+  <section class="section" id="works">
+    <h2>精选作品</h2>
+    <div class="works">
+      <div class="work-item"><img src="https://image-resource.mastergo.com/161464800972240/161464800972243/454ad6ec06e50446ea65040b3b16bfcd.jpg" alt="work1"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/161464800972240/161464800972243/8a5d6d13d9edf0cc1e5e12ee0d11361e.jpg" alt="work2"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/161464800972240/161464800972243/a0af67a03c2277f7d8713d0822cc8d0d.jpg" alt="work3"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/161464800972240/161464800972243/3890a06f774530ec2ee87142cf521cf8.jpg" alt="work4"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/161464800972240/161464800972243/0573c976cc3f7632a5a028180b5f334d.jpg" alt="work5"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/161464800972240/161464800972243/f702d8bf1f940bcfdc5d90711c8e8a29.jpg" alt="work6"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/161464800972240/161464800972243/34de026812bdbd28a509f3e36935602c.jpg" alt="work7"></div>
+      <div class="work-item"><img src="https://image-resource.mastergo.com/161464800972240/161464800972243/f95178ee8454679f3b96e1d11a706d14.jpg" alt="work8"></div>
+    </div>
+  </section>
+  <section class="contact-section" id="contact">
+    <div class="section contact-container">
+      <div class="contact-info">
+        <h3>联系方式</h3>
+        <p>电话：+86 18162618392</p>
+        <p>邮箱：3182649906@qq.com</p>
+        <div class="social-links">
+          <a class="social-link" href="#" title="微信">微</a>
+          <a class="social-link" href="#" title="QQ">Q</a>
+          <a class="social-link" href="#" title="微博">博</a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>留言</h3>
+        <form>
+          <label for="name">姓名</label>
+          <input type="text" id="name" name="name" placeholder="请输入您的姓名">
+          <label for="email">邮箱</label>
+          <input type="email" id="email" name="email" placeholder="请输入您的邮箱">
+          <label for="message">留言</label>
+          <textarea id="message" name="message" rows="5" placeholder="请输入您的留言"></textarea>
+          <button type="submit">发送消息</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script>
+    // 简单轮播图切换
+    const images = document.querySelectorAll('.carousel img');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let current = 0;
+    function showSlide(idx) {
+      images.forEach((img, i) => {
+        img.style.display = i === idx ? '' : 'none';
+        dots[i].classList.toggle('active', i === idx);
+      });
+      current = idx;
+    }
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+    setInterval(() => {
+      showSlide((current + 1) % images.length);
+    }, 4000);
+  </script>
+</body>
+</html>
